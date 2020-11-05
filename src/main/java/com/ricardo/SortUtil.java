@@ -59,7 +59,8 @@ class SortUtil {
      * @param array 待排序数字数组 不能为null
      */
     static void insertionSort(int[] array) {
-        if (array.length < 2) {
+        int minLength = 2;
+        if (array.length < minLength) {
             return;
         }
         for (int i = 1; i < array.length; i++) {
