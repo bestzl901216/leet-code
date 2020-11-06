@@ -74,10 +74,6 @@ class SortUtil {
      * 希尔排序
      * 适用于大型数组，性能与递增序列的步长选择有关
      *
-     *
-     *
-     *
-     *
      * @param array 待排序数字数组 不能为null
      */
     static void shellSort(int[] array) {
