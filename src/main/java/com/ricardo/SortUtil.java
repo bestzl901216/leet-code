@@ -72,6 +72,11 @@ class SortUtil {
 
     /**
      * 希尔排序
+     * 适用于大型数组，性能与递增序列的步长选择有关
+     *
+     *
+     *
+     *
      *
      * @param array 待排序数字数组 不能为null
      */
@@ -79,9 +84,15 @@ class SortUtil {
         int length = array.length;
         int gap = length / 2;
         while (gap > 0) {
-            for (int i = gap; i < array.length; i++) {
-                if (array[i] > array[i - gap]) {
-                    ArrayUtil.exchange(array, i, i - gap);
+            for (int i = gap; i < length; i++) {
+                int curIndex = i;
+                int preIndex = i - gap;
+
+
+                while (preIndex >= 0 && array[preIndex] > array[curIndex]) {
+                    ArrayUtil.exchange(array, preIndex, curIndex);
+                    preIndex -= gap;
+                    curIndex -= gap;
                 }
             }
             gap /= 2;
