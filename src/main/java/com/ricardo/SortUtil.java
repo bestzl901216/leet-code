@@ -83,8 +83,6 @@ class SortUtil {
             for (int i = gap; i < length; i++) {
                 int curIndex = i;
                 int preIndex = i - gap;
-
-
                 while (preIndex >= 0 && array[preIndex] > array[curIndex]) {
                     ArrayUtil.exchange(array, preIndex, curIndex);
                     preIndex -= gap;
