@@ -96,4 +96,48 @@ class SortUtil {
             gap /= 2;
         }
     }
+
+    /**
+     * 归并排序
+     *
+     * <p>T(n) = O(n * log n)</>
+     *
+     * @param array 待排序数字数组 不能为null
+     */
+    static void mergeSort(int[] array) {
+        mergeSort(array, 0, array.length - 1);
+    }
+
+    /**
+     * 排序
+     */
+    private static void mergeSort(int[] array, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int mid = (left + right) / 2;
+        mergeSort(array, left, mid);
+        mergeSort(array, mid + 1, right);
+        merge(array, left, mid, right);
+    }
+
+    /**
+     * 合并
+     */
+    private static void merge(int[] array, int left, int mid, int right) {
+        int[] temp = new int[right - left + 1];
+        int p1 = left;
+        int p2 = mid + 1;
+        int tp = 0;
+        while (p1 <= mid && p2 <= right) {
+            temp[tp++] = array[p1] <= array[p2] ? array[p1++] : array[p2++];
+        }
+        while (p1 <= mid) {
+            temp[tp++] = array[p1++];
+        }
+        while (p2 <= right) {
+            temp[tp++] = array[p2++];
+        }
+        System.arraycopy(temp, 0, array, left, right - left);
+    }
 }

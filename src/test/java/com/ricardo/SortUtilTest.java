@@ -50,4 +50,11 @@ public class SortUtilTest {
         SortUtil.shellSort(temp);
         Assert.assertTrue(isSorted(temp));
     }
+
+    @Test
+    public void testMergeSort() {
+        int[] temp = Arrays.copyOf(array, array.length);
+        SortUtil.mergeSort(temp);
+        Assert.assertTrue(isSorted(temp));
+    }
 }
