@@ -1,5 +1,7 @@
 package com.ricardo;
 
+import java.util.Arrays;
+
 /**
  * @author Ricardo
  * @date 2020/5/30
@@ -21,4 +23,19 @@ class ArrayUtil {
         array[j] = temp;
     }
 
+    /**
+     * 判断数组是否有序（从小到大）
+     *
+     * @param array 数组 不能为null
+     * @return true 有序 | false 无序
+     */
+    static boolean isSorted(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                System.out.println(Arrays.toString(array));
+                return false;
+            }
+        }
+        return true;
+    }
 }

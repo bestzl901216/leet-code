@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
+import static com.ricardo.ArrayUtil.isSorted;
+
 /**
  * @author Ricardo
  * @date 2020/11/5
@@ -12,16 +14,6 @@ import java.util.Arrays;
 public class SortUtilTest {
 
     private int[] array = {3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48};
-
-    private static boolean isSorted(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] > array[i + 1]) {
-                System.out.println(Arrays.toString(array));
-                return false;
-            }
-        }
-        return true;
-    }
 
     @Test
     public void testBubbleSort() {
@@ -55,6 +47,13 @@ public class SortUtilTest {
     public void testMergeSort() {
         int[] temp = Arrays.copyOf(array, array.length);
         SortUtil.mergeSort(temp);
+        Assert.assertTrue(isSorted(temp));
+    }
+
+    @Test
+    public void testQuickSort() {
+        int[] temp = Arrays.copyOf(array, array.length);
+        SortUtil.quickSort(temp);
         Assert.assertTrue(isSorted(temp));
     }
 }

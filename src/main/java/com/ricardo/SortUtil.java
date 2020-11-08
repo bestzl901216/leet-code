@@ -100,7 +100,7 @@ class SortUtil {
     /**
      * 归并排序
      *
-     * <p>T(n) = O(n * log n)</>
+     * <p>T(n) = O(n*log2n)</>
      *
      * @param array 待排序数字数组 不能为null
      */
@@ -139,5 +139,58 @@ class SortUtil {
             temp[tp++] = array[p2++];
         }
         System.arraycopy(temp, 0, array, left, right - left);
+    }
+
+    /**
+     * 快速排序
+     *
+     * <p>最佳情况：T(n) = O(n*log2n) 最差情况：T(n) = O(n2) 平均情况：T(n) = O(n*log2n)</p>
+     *
+     * @param array 待排序数字数组 不能为null
+     */
+    static void quickSort(int[] array) {
+        quickSort(array, 0, array.length - 1);
+    }
+
+    private static void quickSort(int[] array, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int mid = partition(array, left, right);
+        quickSort(array, left, mid - 1);
+        quickSort(array, mid + 1, right);
+    }
+
+    /**
+     * 切分数组
+     * <p>选择一个基准，然后将小于它的数放在左边，大于它的数放在右边，相同的数可以到任一边</p>
+     *
+     * @param array 数组
+     * @param left  排序范围左值
+     * @param right 排序范围右值
+     * @return 基准值的坐标
+     */
+    private static int partition(int[] array, int left, int right) {
+        int i = left;
+        int j = right + 1;
+        int v = array[left];
+        while (true) {
+            while (array[++i] <= v) {
+                if (i == right) {
+                    break;
+                }
+            }
+            while (array[--j] >= v) {
+                if (j == left) {
+                    break;
+                }
+            }
+            if (i >= j) {
+                break;
+            }
+            ArrayUtil.exchange(array, i, j);
+        }
+        ArrayUtil.exchange(array, left, j);
+        return j;
     }
 }
