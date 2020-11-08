@@ -175,12 +175,12 @@ class SortUtil {
         int j = right + 1;
         int v = array[left];
         while (true) {
-            while (array[++i] <= v) {
+            while (array[++i] < v) {
                 if (i == right) {
                     break;
                 }
             }
-            while (array[--j] >= v) {
+            while (array[--j] > v) {
                 if (j == left) {
                     break;
                 }
