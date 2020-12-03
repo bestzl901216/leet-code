@@ -138,7 +138,7 @@ class SortUtil {
         while (p2 <= right) {
             temp[tp++] = array[p2++];
         }
-        System.arraycopy(temp, 0, array, left, right - left);
+        System.arraycopy(temp, 0, array, left, right - left + 1);
     }
 
     /**
