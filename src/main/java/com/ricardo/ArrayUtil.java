@@ -1,6 +1,8 @@
 package com.ricardo;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Ricardo
@@ -29,12 +31,17 @@ class ArrayUtil {
      * @param array 数组 不能为null
      * @return true 有序 | false 无序
      */
-    static boolean isSorted(int[] array) {
+    static boolean isSorted(int[] array, int[] source) {
+        Map<Integer, Integer> map = new HashMap<>(16);
+        for (int i : source) {
+            map.merge(i, 1, Integer::sum);
+        }
         for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] > array[i + 1]) {
+            if (map.getOrDefault(array[i], 0) == 0 || array[i] > array[i + 1]) {
                 System.out.println(Arrays.toString(array));
                 return false;
             }
+            map.merge(array[i], 1, Math::subtractExact);
         }
         return true;
     }

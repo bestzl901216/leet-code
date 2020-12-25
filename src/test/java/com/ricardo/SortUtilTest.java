@@ -19,41 +19,42 @@ public class SortUtilTest {
     public void testBubbleSort() {
         int[] temp = Arrays.copyOf(array, array.length);
         SortUtil.bubbleSort(temp);
-        Assert.assertTrue(isSorted(temp));
+        Assert.assertTrue(isSorted(temp, array));
     }
 
     @Test
     public void testSelectionSort() {
         int[] temp = Arrays.copyOf(array, array.length);
         SortUtil.selectionSort(temp);
-        Assert.assertTrue(isSorted(temp));
+        Assert.assertTrue(isSorted(temp, array));
     }
 
     @Test
     public void testInsertionSort() {
         int[] temp = Arrays.copyOf(array, array.length);
         SortUtil.insertionSort(temp);
-        Assert.assertTrue(isSorted(temp));
+        Assert.assertTrue(isSorted(temp, array));
     }
 
     @Test
     public void testShellSort() {
         int[] temp = Arrays.copyOf(array, array.length);
         SortUtil.shellSort(temp);
-        Assert.assertTrue(isSorted(temp));
+        Assert.assertTrue(isSorted(temp, array));
     }
 
     @Test
     public void testMergeSort() {
         int[] temp = Arrays.copyOf(array, array.length);
         SortUtil.mergeSort(temp);
-        Assert.assertTrue(isSorted(temp));
+        Assert.assertTrue(isSorted(temp, array));
     }
 
     @Test
     public void testQuickSort() {
         int[] temp = Arrays.copyOf(array, array.length);
         SortUtil.quickSort(temp);
-        Assert.assertTrue(isSorted(temp));
+        Assert.assertTrue(isSorted(temp, array));
     }
+
 }
