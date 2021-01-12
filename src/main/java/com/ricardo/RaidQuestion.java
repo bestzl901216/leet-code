@@ -3,7 +3,6 @@ package com.ricardo;
 
 /**
  * @author Ricardo
- * @date 2020/12/3
  */
 public class RaidQuestion {
     private static int[] dp;

@@ -6,7 +6,6 @@ import java.util.Map;
 
 /**
  * @author Ricardo
- * @date 2020/5/30
  */
 class ArrayUtil {
     /**

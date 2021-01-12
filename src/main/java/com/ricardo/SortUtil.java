@@ -4,7 +4,6 @@ package com.ricardo;
  * int数组排序工具
  *
  * @author Ricardo
- * @date 2020/11/5
  */
 class SortUtil {
 

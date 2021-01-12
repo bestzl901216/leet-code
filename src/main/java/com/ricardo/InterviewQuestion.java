@@ -4,7 +4,6 @@ package com.ricardo;
  * 力扣-名企高频面试题
  *
  * @author Ricardo
- * @date 2020/12/1
  */
 public class InterviewQuestion {
 

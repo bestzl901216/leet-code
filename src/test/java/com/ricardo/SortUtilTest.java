@@ -9,11 +9,10 @@ import static com.ricardo.ArrayUtil.isSorted;
 
 /**
  * @author Ricardo
- * @date 2020/11/5
  */
 public class SortUtilTest {
 
-    private int[] array = {3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48};
+    private final int[] array = {3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48};
 
     @Test
     public void testBubbleSort() {
